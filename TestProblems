@@ -1,0 +1,123 @@
+import string
+import random
+#Task1
+
+"""def str_count(text):
+    # textstr = text.split(" ")
+    # num_text = len(text)
+    # count_lower = 0
+    # count_upper = 0
+    # strmax = 0
+    # for words in textstr:
+    #     for word in words:
+    #         if word.islower():
+    #             count_lower += 1
+    #         if word.isupper():
+    #             count_upper += 1
+    #     if len(words) > strmax:
+    #         longest_string = words
+    # print(f"The solution is {num_text}--{count_upper}--{count_lower}--{longest_string}")
+    words = text.split()
+    word_count = len(words)
+
+    uppercase_count = sum(1 for char in text if char.isupper())
+    lowercase_count = sum(1 for char in text if char.islower())
+
+    longest_word = max(words, key=len)
+
+    print("Word count:", word_count)
+    print("Uppercase letters:", uppercase_count)
+    print("Lowercase letters:", lowercase_count)
+    print("Longest word:", longest_word)
+text=input("Enter a text: ")
+str_count(text)"""
+#Task2
+"""
+def test_score(grades):
+    avg=0
+    sum=0
+    for grade in grades:
+        sum+=grade
+    avg=sum/3
+    if avg >=90 and avg<=100:
+        print(f"Your average score is {round(avg)} and your final grade is A")
+    elif avg >= 80 and avg <= 89:
+        print(f"Your average score is {round(avg)} and your final grade is B")
+    elif avg >=70 and avg<=79:
+        print(f"Your average score is {round(avg)} and your final grade is C")
+    elif avg >=60 and avg<=69:
+        print(f"Your average score is {round(avg)} and your final grade is D")
+    else :
+        print(f"Your average score is {round(avg)} and your final grade is F")
+grades=[]
+print("Enter your 3 grades\n")
+for i in range(0,3):
+    grade=int(input())
+    grades.append(grade)
+test_score(grades)
+"""
+#Task3
+# all_characters = string.ascii_letters + string.digits + string.punctuation
+# length = 8
+# password = ''.join(random.choices(all_characters, k=length))
+# print("Your password is:", password)
+
+
+# def generate_password():
+#     """
+#     Generates a random password with specified criteria.
+#     """
+#     uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#     lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
+#     digits = "0123456789"
+#     special_chars = "!@#$%^&*"
+
+#     characters = list(uppercase_letters) + list(lowercase_letters) + list(digits) + list(special_chars)
+
+#     password = []
+#     password.append(random.choice(uppercase_letters))
+#     password.append(random.choice(lowercase_letters))
+#     password.append(random.choice(digits))
+#     password.append(random.choice(special_chars))
+
+#     # Add remaining characters randomly
+#     for _ in range(8 - len(password)):
+#         password.append(random.choice(characters))
+
+#     # Shuffle the characters for better randomness
+#     random.shuffle(password)
+
+#     return "".join(password)
+
+# Generate and print the password
+# password = generate_password()
+# print("Generated password:", password)
+
+#Task4
+
+# entered char not int and returned error
+# numbs=[int(x) for x in input("Enter the numbers\n").split(",")]
+# print(numbs)
+# print(list(set(numbs)))
+# print(sorted(list(set(numbs))))
+
+#Task5
+
+# can not use 20.5
+currinices = {
+"EGY":{"USD":55,"EUR":60,"YEN":20,"STR":35},
+"USD":{"EGY":10,"EUR":60,"YEN":20,"STR":35},
+"EUR":{"USD":55,"EGY":12,"YEN":20,"STR":35},
+"YEN":{"USD":55,"EUR":60,"EGY":5,"STR":35},
+"STR":{"USD":55,"EUR":60,"YEN":20,"EGY":10}
+}
+money=int(input("Enter the amount of money\n"))
+currency=input("Enter the currency\n")
+target_curr=input("Enter the target currency to be converted\n")
+convert_curr=currinices.get(currency)
+converte_value=convert_curr.get(target_curr)
+converted_money=converte_value*money
+print(converted_money)
+
+
+
